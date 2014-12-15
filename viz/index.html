@@ -1,0 +1,125 @@
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css">
+		<link href="./style.css" rel="stylesheet" type="text/css">
+		<script src="./jquery-2.1.1.min.js" type="text/javascript">
+</script>
+		<script src="jquery-ui.js" type="text/javascript">
+</script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript">
+</script>
+		
+	</head>
+	<body>
+		
+	    <header class="top" role="header">
+	        <div class="container">
+	            <a href="#" class="navbar-brand pull-left">
+	                bayesian bandit simulator
+	            </a>
+	            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	                <span class="glyphicon glyphicon-align-justify"></span>
+	            </button>
+	            <nav class="navbar-collapse collapse" role="navigation">
+	                <ul class="navbar-nav nav">
+	                   
+	                </ul>
+	            </nav>
+	        </div>
+	    </header>
+		
+			  
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-md-12" id="spAll"></div>
+			</div>
+			
+			<div class="row">
+				<!-- <div class="col-md-1" id="sp-l"></div> -->
+				
+				<div class="col-md-7" id="plot1">
+				</div>
+					
+				<div class="col-md-2">
+					<div class="btn-group-vertical">
+						<button type="button" id="btn1" class="btn btn-info btn-small" onclick="update_arm(0)">lever 1</button> <button type="button" id="btn2" class="btn btn-info btn-small" onclick="update_arm(1)">lever 2</button> <button type="button" id="btn3" class="btn btn-info btn-small" onclick="update_arm(2)">lever 3</button> <button type="button" id="btn4" class="btn btn-info btn-small" onclick="bayesian_bandits()">run</button>
+					</div>
+				</div>
+				
+		<div class="col-md-2">
+			<table class="table" id="lrp">
+			</table>
+		</div>
+			
+		<div class="col-md-1" id="sp-r"></div>
+		
+		
+		
+			<div class="row">
+				<div class="col-md-12" id="spAll"></div>
+			</div>
+			
+			<div class="row">
+				<!-- <div class="col-md-1" id="sp-l"></div> -->
+				
+				<div class="col-md-7" id="plot2"></div>
+				
+					<div class="col-md-4" id="table">
+						
+						<table class="table" id="metricsTable">
+							
+							<tbody>
+								<tr>
+									<td id="rowHeader">total trials</td>
+									<td id="trials"></td>
+									
+								</tr>
+								
+								<tr>
+									<td id="rowHeader">total rewards</td>
+									<td id="rewards"></td>
+									
+								</tr>
+								
+								<tr>
+									<td id="rowHeader">success ratio</td>
+									<td id="ratio"></td>
+									
+								</tr>
+								
+								
+							</tbody>
+						</table>
+						
+						
+							
+				</div>
+				
+		
+				<div class="col-md-1" id="sp-r"></div>
+			
+				
+				<div class="row">
+					<div class="col-md-12" id="spAll"></div>
+				</div>
+				
+				
+				
+			</div>
+		</div><script src="./d3.min.js" type="text/javascript">
+</script><script src="./main.js" type="text/javascript">
+</script>
+	</body>
+</html>

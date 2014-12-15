@@ -1,0 +1,142 @@
+
+
+
+.top {
+    background-color: #ED2939;
+	line-height: 35px;
+	height: 40px;
+}
+.top .navbar-brand {
+	font-family: "Helvetica Neue Light;
+	font-weight: 320;
+	font-size: 15px;
+	line-height: 35px;
+	height: 40px;
+    text-align: left;
+	margin: 0;
+    padding: 0;
+    background-color: #ED2939;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.top .container {
+	font-family: "Helvetica Neue Light;
+    padding: 0;
+}
+
+.bottom {
+    background-color: #71A6D2;
+}
+
+.bottom .container {
+   background-color: #71A6D2;
+    height: 25px;
+}
+
+.axis line, .axis path {
+	stroke: #2A52BE;
+	stroke-width: 1.0;
+	shape-rendering: crispEdges;
+}
+
+.axis text {
+	fill: #808080;
+	font-size: 11px;
+	font-family: Arial;
+}
+
+.btn-group-vertical {
+
+}
+
+#spAll {
+	margin-bottom: 20px;
+}
+
+# lrp > > tr > td {
+	text-align-right;
+	margin-right: 0;
+	padding-right: 0;
+	color: #FFFFFF;
+}
+
+
+
+#lrp > caption {
+	padding-right: 0;
+	margin-right: 0;
+	text-align: center;
+	background-color: #6D9BC3;
+	color: #FFFFFF;
+	font-size: 13px;
+}
+
+.table, table {
+	border-collapse: separate;
+	border-spacing: 1.5px;
+}
+
+#metricsTable {
+	margin-top: 0;
+	padding-top 0;
+}
+
+tr {
+	margin-top: 0;
+	padding-top: 2px;
+}
+
+#rowHeader {
+	background-color: #6D9BC3;
+	color: #FFFFFF;
+	font-size: 14px;
+	padding-left: 5px;
+	text-align: left;
+	margin-right: 0;
+	padding-right: 0;
+}
+
+#trials, #rewards, #ratio {
+	padding-right: 2;
+	margin-right: 0;
+	text-align: right;
+	font-family: "Arial";
+	font-weight: 300;
+	color: #2E5894;
+	font-size: 20px;
+}
+
+#btn1, #btn2, #btn3, #btn4 {
+	border-width: 1.5px;
+	border-color: #FFFFFF;
+	background-color: #6D9BC3;
+
+}
+
+path {
+  stroke-width: 2;
+  fill: none;
+}
+
+line {
+  stroke: gray;
+}
+
+.line {
+  fill: none;
+  stroke: #FF8C00;
+  stroke-width: 1.5px;
+}
+
+
+body {
+  color:#828282;
+  background-color:#eee;
+}
+
+
+
+
+
+
