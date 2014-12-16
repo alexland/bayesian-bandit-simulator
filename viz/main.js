@@ -46,9 +46,7 @@
 					return d;
 				}
 			});
-
-
-	
+			
     function pdfbeta(x_array, a, b) {
         //x is an array
         _beta = Beta(a,b);
@@ -66,7 +64,6 @@
         return Math.sqrt( 2*Math.PI)*Math.exp(log_n - log_d)
         }
 
-    
 	function rbeta(a, b) {
 		var p = a/b;
 		if (Math.min(a,b) <= 1) {
@@ -112,21 +109,20 @@
         return
     }
     
-    function bayesian_bandits() {
-        //for (var i=0; i<n_pulls; i++) {
-            //sample from Beta distributions
-            var samples = rbeta_array(ARMS);
-            var select = samples.indexOf( d3.max( samples) );
-            update_arm(select);
-            if (BB_RUN < 300){
-                BB_RUN += 1;
-                window.setTimeout( bayesian_bandits, 100)
-            }
-            else{
-                return 
-            }
-        //}
-    }
+	function bayesian_bandits() {
+		//for (var i=0; i<n_pulls; i++) {
+		//sample from Beta distributions
+		var samples = rbeta_array(ARMS);
+		var select = samples.indexOf(d3.max( samples));
+		update_arm(select);
+		if (BB_RUN < 300){
+			BB_RUN += 1;
+			window.setTimeout( bayesian_bandits, 100)
+		}
+		else {
+			return 
+		}
+	}
     
     var x_array = [];
     var _N = 100;
@@ -137,15 +133,15 @@
 	//----------------------- data viz ----------------------//
 
 	var colors = [	
-		"#E9D66B", "#E9D66B",
-		"#0C738E", "#0C738E",
-		"#3AB5A9", "#3AB5A9"
+		"#E9692C", "#E9692C",
+		"#0E7C61", "#0E7C61",
+		"#2A52BE", "#2A52BE"
 	],
 	fill_colors = colors;
    
 	var container_dims = {W: 560, H: 250}, 
 		BAR_HEIGHT = 20,
-		MRG = {T: 10, R: 20, B: 30, L: 50},
+		MRG = {T: 20, R: 20, B: 30, L: 50},
 		chart_dims = {
 			W: container_dims.W - MRG.L - MRG.R,
 			H: container_dims.H - MRG.T - MRG.B
@@ -161,12 +157,17 @@
 	var xAxis = d3.svg.axis()
 		.scale(xScale)
 		.orient("bottom")
-		.ticks(10);
+		.innerTickSize(-chart_dims.H)
+		.outerTickSize(0)
+		.tickPadding(10);
 		
 	var yAxis = d3.svg.axis()
 		.scale(yScale)
 		.orient("left")
-		.ticks(5);
+		.innerTickSize(-chart_dims.W)
+		.outerTickSize(0)
+		.tickPadding(0)
+		.tickPadding(10);
 
 	pdf_plotter = d3.svg.line()
 	    .x(function(d, i) {
@@ -188,19 +189,28 @@
 				transform: "translate(" + MRG.L + "," + MRG.T + ")",
 				id: "plotWin2"
 			});
-    
+	
 	plotWin2.append("g")
 		.attr({
 			"class": "x axis",
 			transform: "translate(0," + chart_dims.H + ")"
 		})
 		.call(xAxis);
-		
+
 	plotWin2.append("g")
 		.attr({
 			"class": "y axis"
 		})
-		.call(yAxis); 
+		.call(yAxis);
+		
+	plotWin2.append("text")
+		.attr({
+			"class": "plotTitle",
+			x: chart_dims.W/1.4,
+			y: -5,
+			"text-anchor": "right"
+		})
+		.text("posterior distributions");
 			
 	var L1g = d3.select("#plotWin2")
 		.append("g")
@@ -232,7 +242,7 @@
 		.datum(L1d)
 			.attr({
 				d: pdf_plotter,
-				stroke: "#E9D66B",
+				stroke: colors[0],
 				"stroke-width": 1.5,
 				"id": "L1p"
 			});
@@ -242,7 +252,7 @@
 			.datum(L2d)
 			.attr({
 				d: pdf_plotter,
-				stroke: "#0C738E",
+				stroke: colors[2],
 				"stroke-width": 1.5,
 				"id": "L2p"
 			});
@@ -253,7 +263,7 @@
 		.datum(L3d)
 			.attr({
 				d: pdf_plotter,
-				stroke: "#3AB5A9",
+				stroke: colors[4],
 				"stroke-width": 1.5,
 				"id": "L3p"
 			});
@@ -275,8 +285,10 @@
 		
 	xAxis_bar = d3.svg.axis()
 		.scale(xScale_bar)
-		.ticks(10)
-		.orient("bottom");
+		.orient("bottom")
+		.innerTickSize(-chart_dims.H)
+		.outerTickSize(0)
+		.tickPadding(10);
 		
 	yAxis_bar = d3.svg.axis()
 		.scale(yScale_bar)

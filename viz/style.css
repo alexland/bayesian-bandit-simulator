@@ -1,5 +1,8 @@
 
-
+body {
+	color:#828282;
+	background-color:#D3D3D3;
+}
 
 .top {
     background-color: #ED2939;
@@ -35,8 +38,8 @@
 }
 
 .axis line, .axis path {
-	stroke: #2A52BE;
-	stroke-width: 1.0;
+	stroke: #8C92AC;
+	stroke-width: 2;
 	shape-rendering: crispEdges;
 }
 
@@ -44,6 +47,12 @@
 	fill: #808080;
 	font-size: 11px;
 	font-family: Arial;
+}
+
+.tick line {
+	stroke: #FFFFFF;
+	stroke-width: 0.8;
+	stroke-opacity: 0.85;
 }
 
 .btn-group-vertical {
@@ -54,14 +63,17 @@
 	margin-bottom: 20px;
 }
 
-# lrp > > tr > td {
-	text-align-right;
+# lrp > tr > td {
+	text-align-center;
+/*	margin-left: 5px;*/
 	margin-right: 0;
 	padding-right: 0;
 	color: #FFFFFF;
 }
 
-
+#lrp {
+	text-align: center;
+}
 
 #lrp > caption {
 	padding-right: 0;
@@ -73,8 +85,11 @@
 }
 
 .table, table {
-	border-collapse: separate;
-	border-spacing: 1.5px;
+	border-collapse: collapse;
+	/*border-collapse: separate;
+	border-spacing: 1.5px;*/
+	border: 1.5px solid #FFFFFF;
+	border-radius: 7px;
 }
 
 #metricsTable {
@@ -86,6 +101,11 @@ tr {
 	margin-top: 0;
 	padding-top: 2px;
 }
+
+td {
+	border: 1.5px solid #FFFFFF;
+}
+
 
 #rowHeader {
 	background-color: #6D9BC3;
@@ -111,29 +131,31 @@ tr {
 	border-width: 1.5px;
 	border-color: #FFFFFF;
 	background-color: #6D9BC3;
-
 }
 
 path {
-  stroke-width: 2;
-  fill: none;
+	stroke-width: 2;
+	fill: none;
 }
 
 line {
-  stroke: gray;
+	stroke: gray;
 }
 
 .line {
-  fill: none;
-  stroke: #FF8C00;
-  stroke-width: 1.5px;
+	fill: none;
+	stroke:#8C92AC;
+	stroke-width: 1.5px;
 }
 
-
-body {
-  color:#828282;
-  background-color:#eee;
+.plotTitle {
+	font-family: "Helvetica";
+	font-size: 12;
+	fill: #6D9BC3;
+	stroke: none;
+	
 }
+
 
 
 
