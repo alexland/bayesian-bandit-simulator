@@ -1,0 +1,31 @@
+
+
+mab is a heuristic framework for an automatic feedback loop in split-path testing
+
+epsilon greedy: 
+
+	(i) explore vs exploit
+	
+		explore: select a lever at random
+		
+		exploit: select arm with best performance so far
+		
+	epsilon-greedy will choose to test w/ frequency of epsilon
+		1.0 => always test
+		
+		
+
+for i in range(n_trials):
+
+    (i) sample a random variable Xb from the prior of bandit b, for all b
+	
+	(ii) select the bandit with largest sample, i.e. select B=argmax * b
+	
+	(iii) observe the result of pulling bandit B, then update your prior on bandit B
+	
+
+initial priors are Beta(α=1,β=1) (a uniform distribution)
+
+observed result is a binomial
+
+posterior is  Beta(α=1+X,β=1+1−X).

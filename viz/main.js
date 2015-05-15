@@ -257,7 +257,6 @@
 				"id": "L2p"
 			});
 
-
 	d3.select("#L3g")
 		.append("path")
 		.datum(L3d)
