@@ -1,0 +1,10 @@
+
+/bootstrap
+.icns
+.ico
+d3.min.js
+
+jquery*
+.DS_Store
+
+.pyc
